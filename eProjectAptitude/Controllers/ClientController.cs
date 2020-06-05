@@ -8,7 +8,7 @@ namespace eProjectAptitude.Controllers
 {
     public class ClientController : Controller
     {
-        // GET: Client
+        // GET: Client1
         public ActionResult Index()
         {
             return View();
