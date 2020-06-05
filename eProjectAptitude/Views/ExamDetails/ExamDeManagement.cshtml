@@ -1,0 +1,46 @@
+﻿@model IEnumerable<eProjectAptitude.Models.Entity.ExaminationDetail>
+
+@{
+    ViewBag.Title = "ExamDeManagement";
+    Layout = "~/Views/Home/_MyLayout.cshtml";
+}
+
+<h2>ExamDeManagement</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddExamDe")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDQuestion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDExam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalMarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDQuestion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDExam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalMarks)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditExamDe", new { id=item.ID }) |
+            @Html.ActionLink("Details", "DetailExamDe", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "DeleteExamDe", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

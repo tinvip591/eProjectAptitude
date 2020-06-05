@@ -1,0 +1,85 @@
+﻿@model eProjectAptitude.Models.Entity.Question
+
+@{
+    ViewBag.Title = "DetailQuestion";
+    Layout = "~/Views/Home/_MyLayout.cshtml";
+}
+
+<h2>DetailQuestion</h2>
+
+<div>
+    <h4>Question</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.QuestionTypeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuestionTypeID)
+        </dd>
+
+
+    
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuestionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuestionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OPB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OPC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OPD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marks)
+        </dt>
+            <dd>
+            @Html.DisplayFor(model => model.Marks)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditQuestion", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "QuestionManagement")
+</p>

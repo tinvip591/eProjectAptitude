@@ -1,0 +1,58 @@
+﻿@model IEnumerable<eProjectAptitude.Models.Entity.Examination>
+
+@{
+    ViewBag.Title = "ExaminationManagement";
+    Layout = "~/Views/Home/_MyLayout.cshtml";
+}
+
+<h2>ExaminationManagement</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddExamination")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeStartExam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeEndExam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeStartExam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeEndExam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditExamination", new { id=item.ID }) |
+            @Html.ActionLink("Details", "DetailExamination", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "DeleteExamination", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

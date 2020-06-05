@@ -1,0 +1,47 @@
+﻿@model IEnumerable<eProjectAptitude.Models.Entity.Question>
+
+@{
+    ViewBag.Title = "QuestionManagement";
+    Layout = "~/Views/Home/_MyLayout.cshtml";
+}
+
+<h2>QuestionManagement</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddQuestion")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionType.QuestionTypeName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionType.QuestionTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marks)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditQuestion", new { id = item.ID }) |
+            @Html.ActionLink("Details", "DetailQuestion", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "DeleteQuestion", new { id = item.ID })
+        </td>
+    </tr>
+}
+
+</table>

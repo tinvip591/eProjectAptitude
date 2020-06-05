@@ -1,0 +1,112 @@
+﻿@model IEnumerable<eProjectAptitude.Models.Entity.User>
+
+@{
+    ViewBag.Title = "UserManagement";
+    Layout = "~/Views/Home/_MyLayout.cshtml";
+}
+
+<h2>UserManagement</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddUser")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GeneralKnowledgeExamMarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MathematicsExamMarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComputerTechnologyExamMarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PositionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateExam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GeneralKnowledgeExamMarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MathematicsExamMarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComputerTechnologyExamMarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PositionID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateExam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditUser", new { id=item.UserID }) |
+            @Html.ActionLink("Details", "DetailUser", new { id=item.UserID }) |
+            @Html.ActionLink("Delete", "DeleteUser", new { id=item.UserID })
+        </td>
+    </tr>
+}
+
+</table>

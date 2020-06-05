@@ -1,0 +1,88 @@
+﻿@model IEnumerable<eProjectAptitude.Models.Entity.Employee>
+
+@{
+    ViewBag.Title = "EmployeeManagement";
+    Layout = "~/Views/Home/_MyLayout.cshtml";
+}
+
+<h2>EmployeeManagement</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddEmployee")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdR)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdR)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditEmployee", new { id=item.IdE }) |
+            @Html.ActionLink("Details", "DetailEmployee", new { id=item.IdE }) |
+            @Html.ActionLink("Delete", "DeleteEmployee", new { id=item.IdE })
+        </td>
+    </tr>
+}
+
+</table>

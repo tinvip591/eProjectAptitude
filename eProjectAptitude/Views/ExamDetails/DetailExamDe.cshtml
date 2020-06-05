@@ -1,0 +1,43 @@
+﻿@model eProjectAptitude.Models.Entity.ExaminationDetail
+
+@{
+    ViewBag.Title = "DetailExamDe";
+    Layout = "~/Views/Home/_MyLayout.cshtml";
+}
+
+<h2>DetailExamDe</h2>
+
+<div>
+    <h4>ExaminationDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDQuestion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDQuestion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDExam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDExam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMarks)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditExamDe", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "ExamDeManagement")
+</p>

@@ -1,0 +1,49 @@
+﻿@model eProjectAptitude.Models.Entity.ExaminationDetail
+
+@{
+    ViewBag.Title = "DeleteExamDe";
+    Layout = "~/Views/Home/_MyLayout.cshtml";
+}
+
+<h2>DeleteExamDe</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ExaminationDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDQuestion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDQuestion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDExam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDExam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMarks)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("DeleteExamDe", "ExamDetails", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ExamDeManagement")
+        </div>
+    }
+</div>
